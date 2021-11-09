@@ -1,0 +1,67 @@
+<script>
+    /*
+    //Uppgift 1
+    let svar;
+    do{
+        svar=prompt("Skriv Åland!");
+        if(svar.toUpperCase()!="ÅLAND"){
+            alert("Skriv Åland ditt jon!");
+        }
+    }while(svar.toUpperCase()!="ÅLAND");
+    alert("Vi befinner oss på Åland.")
+
+    //Uppgift 2
+    let svar;
+    do{
+        svar=prompt("Vill du äta: 1.Pizza 2.Hamburgare 3.Rabbarberpaj 4.Kanelbulle 0.Mätt?");
+        if(svar=="1"){
+            alert("Pizza! Hoppas den är utan annanas.");
+        }
+        else if(svar=="2"){
+            alert("Hamburgare! Utan gurka!");
+        }
+        else if(svar=="3"){
+            alert("Rabbarberpaj! Det är det bästa som finns. Näst efter rabbarberpaj.");
+        }
+        else if(svar=="4"){
+            alert("Kanelbulle! Najs!");
+        }
+        else if(svar=="0"){
+            alert("Mätt!");
+        }
+        else{
+            alert("Välj ett av alternativen!");
+        }
+
+        }while(svar!="0"); 
+
+        //uppgift 3
+        function toPounds(kg){
+            return 2.2*kg;
+        }
+        let kg;
+        kg=prompt("Ange ett antal kilogram");
+        let pd;
+        pd=toPounds(kg);
+        alert(`${kg} kg motsvarar ${pd} pounds.`);
+
+        ____*/
+
+        //uppgift 4
+        
+        
+
+        function randInt(minTal,maxTal){
+            return randTal = Math.floor((Math.random() * maxTal)+ minTal);
+        }
+        let randTal;
+        
+        do {
+        minTal=Number(prompt("Ange lägsta talet."));
+        maxTal=Number(prompt("Ange högsta talet."));
+
+        randInt(minTal,maxTal);
+        alert(`${randTal} är ett slumpmässigt tal mellan ${minTal} och ${maxTal}.`)
+        }while(confirm("Vill du slumpa fram ett nytt tal?"))
+
+</script>

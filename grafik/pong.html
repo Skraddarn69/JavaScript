@@ -1,0 +1,47 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start(){
+
+//Ritar upp paddlarna samt bollen.
+paddles = {speed: 15, width: 20, height: 80, distanceToWall: 20};
+p1 = {x: paddles.distanceToWall, y: totalHeight / 2 - paddles.height / 2};
+p2 = {x: totalWidth - paddles.distanceToWall - paddles.width, y: p1.y};
+ball = {x: totalWidth / 2 - 10, y: totalHeight / 2 - 10,
+size: 20, xSpeed: 10, ySpeed: random(12) - 6};
+}
+
+function update(){
+
+//Styr paddlarnas rörelse.
+if (keyboard.up) { p2.y -= paddles.speed; }
+if (keyboard.down) { p2.y += paddles.speed; }
+if (keyboard.w) { p1.y -= paddles.speed; }
+if (keyboard.s) { p1.y += paddles.speed; }
+
+//Uppdaterar bollens position
+ball.x += ball.xSpeed;
+ball.y += ball.ySpeed;
+
+//Gör så att bollen studsar om bollen kommer till toppen eller botten.
+if (ball.y < 0 || ball.y > totalHeight - ball.size)
+ball.ySpeed = -ball.ySpeed;
+
+//Gör så att bollen studsar mot paddlarna.
+
+if ((ball.x > p1.x && ball.y > p1.y - ball.size &&
+ball.y < p1.y + paddles.height && ball.x < p1.x + paddles.width)
+||(ball.x < p2.x && ball.y > p2.y - ball.size && ball.y < p2.y + paddles.height &&
+ball.x > p2.x - ball.size)) {
+ball.xSpeed = -ball.xSpeed - ball.xSpeed / abs(ball.xSpeed);
+ball.ySpeed = ball.ySpeed + random(8) - 4;
+}
+
+//Startar om spelet om bollen rör sig utanför spelplanen i x-led.
+if (ball.x < 0 - ball.size || ball.x >= totalWidth) {
+start();
+}
+fill("black");
+rectangle(p1.x, p1.y, paddles.width, paddles.height, "white");
+rectangle(p2.x, p2.y, paddles.width, paddles.height, "white");
+rectangle(ball.x, ball.y, ball.size, ball.size, "white");
+}
+</script>

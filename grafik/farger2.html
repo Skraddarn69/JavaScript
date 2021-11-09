@@ -1,0 +1,18 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        if(confirm("Vill du rita?")) {
+            alert("Högerklick för röd, vänsterklick för svart.");
+        } else {
+            alert("Slipp då.");
+        }
+
+        updatesPerSecond = 120;
+    }
+    function update() {
+        if(mouse.x > totalWidth/2&&mouse.y < totalHeight/2) {
+            circle(mouse.x, mouse.y, 20, "blue");
+        } else {
+            circle(mouse.x, mouse.y, 20, "red");
+        }
+    }
+</script>

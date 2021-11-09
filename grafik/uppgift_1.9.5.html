@@ -1,0 +1,17 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        orcs = Math.floor(Math.random()*100)+1;
+        if(orcs > 70) {
+            svardFarg = "SkyBlue";
+        } else {
+            svardFarg = "Silver";
+        }
+        rectangle(700, 490, 30, 100, "DarkRed");
+        rectangle(670, 480, 90, 10, svardFarg);
+        rectangle(700, 330, 30, 160, svardFarg);
+        triangle(685, 480, 715, 460, 745, 480, svardFarg);
+        triangle(690, 380, 740, 380, 715, 460, svardFarg);
+        rectangle(690, 380, 50, -50, svardFarg);
+        triangle(690, 330, 740, 330, 715, 250, svardFarg);
+    }
+</script>

@@ -1,0 +1,12 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        let antal = Math.floor(Math.random()*100000)+1;
+        for(i=0;i<antal;i++) {
+            let r = Math.floor(Math.random()*255)+1;
+            let g = Math.floor(Math.random()*255)+1;
+            let b = Math.floor(Math.random()*255)+1;
+            let ball = {x:random(1500), y:random(1500), storlek:random(50), farg:mixColor(r, g, b)}
+            circle(ball.x, ball.y, ball.storlek, ball.farg);
+        }
+    }
+</script>

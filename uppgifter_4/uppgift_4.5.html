@@ -1,0 +1,14 @@
+<script>
+    function randInt(minTal,maxTal){
+            return randTal = Math.floor((Math.random() * maxTal)+ minTal);
+        }
+        let randTal;
+        
+        do {
+        minTal=Number(prompt("Ange lägsta talet."));
+        maxTal=Number(prompt("Ange högsta talet."));
+
+        randInt(minTal,maxTal);
+        alert(`${randTal} är ett slumpmässigt tal mellan ${minTal} och ${maxTal}.`)
+        }while(confirm("Vill du slumpa fram ett nytt tal?"))
+</script>

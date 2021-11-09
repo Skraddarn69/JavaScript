@@ -1,0 +1,20 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        boll = {x:100, y:100, radie:50};
+        triangel = {x1:200, y1:200, x2:100, y2:300, x3:400, y3:350};
+        kvadrat = {x:700, y:500, bredd:100, langd:100};
+    }
+    function update() {
+        clearScreen();
+        circle(boll.x, boll.y, boll.radie, "blue");
+        boll.x++;
+        boll.y++;
+        triangle(triangel.x1, triangel.y1, triangel.x2, triangel.y2, triangel.x3, triangel.y3, "green");
+        triangel.x1++;
+        triangel.x2++;
+        triangel.x3++;
+        rectangle(kvadrat.x, kvadrat.y, kvadrat.bredd, kvadrat.langd, "red");
+        kvadrat.x--;
+        kvadrat.y--;
+    }
+</script>

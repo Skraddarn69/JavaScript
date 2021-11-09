@@ -1,0 +1,24 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        cat = {x:0, y:0, speed:10, farg:"red"};
+        y=10;
+        hideMouse();
+    }
+    function update() {
+        clearScreen();
+        if(keyboard.a) {cat.x-=cat.speed;}
+        if(keyboard.d) {cat.x+=cat.speed;}
+        if(keyboard.w) {cat.y-=cat.speed;}
+        if(keyboard.s) {cat.y+=cat.speed;}
+        if(keyboard.space) {cat.farg="blue";}
+        circle(cat.x, cat.y, 50, cat.farg);
+
+        circle(mouse.x, mouse.y, 20, "brown");
+
+        if(distance(cat, mouse) < 40) {
+            showMouse();
+            stopUpdate();
+        }
+
+    }
+</script>

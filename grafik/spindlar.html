@@ -1,0 +1,62 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    // En spindelfunction som kan kallas på för att skapa en ny spindel
+    function Spindel(startX, startY, xSpeed, ySpeed, farg) {
+        // this.x och this.y avgör den enskilda spindelns position på skärmen
+        this.x = startX;
+        this.y = startY;
+        // Gör så att spindlarna får positiva hastigheter när random(2) returnerar 0 och negativa hastigheter när den returnerar något annat
+        if(random(2)==0) {
+            this.xSpeed = xSpeed;    
+        } else {
+            this.xSpeed = -xSpeed;    
+        }
+        if(random(2)==0) {
+            this.ySpeed = ySpeed;    
+        } else {
+            this.ySpeed = -ySpeed;
+        }
+
+        // Deklarerar olika åtgärder som ska utföras för varje gång spindeln updateras
+        this.update = function() {
+            // Uppdaterar spindeln om den är innanför skärmen
+            if(this.x > 0 && this.x < totalWidth && this.y > 0 && this.y < totalHeight) {
+                this.x += this.xSpeed;
+                this.y += this.ySpeed;
+            // Ritar upp en spindel
+            save();
+            translate(this.x, this.y);
+            circle(0, 0, 10, "black");
+            line(-20, 5, 20, -5, 3, "black");
+            line(-20, -5, 20, 5, 3, "black");
+            line(-20, -15, 20, 15, 3, "black");
+            line(-20, 15, 20, -15, 3, "black");
+            circle(-3, -3, 2, "white");
+            circle(3, -3, 2, "white");
+            restore();
+            }
+        }
+    }
+
+    function start() {
+        updateFrequency = 0;
+        spindlar = [];
+
+        // Skapar 10 nya spindlar innuti arrayen "spindlar" när sidan startas
+        for(let i=0;i<10;i++) {
+            spindlar.push(new Spindel(totalWidth/2, totalHeight/2, (1+2*random(100)/100) , (1+2*random(100)/100)));
+        }
+    }
+
+    function update() {
+        clearScreen();
+        updateFrequency++;
+        // Uppdaterar de spindlar som finns
+        for(let i=0;i<spindlar.length;i++) {
+            spindlar[i].update();
+        }
+        // Skapar en ny spindel varje gång variabeln updateFrequency är delbar med 10
+        if(updateFrequency%10==0) {
+            spindlar.push(new Spindel(totalWidth/2, totalHeight/2, (1+2*random(100)/100) , (1+2*random(100)/100)));
+        }
+    }
+</script>

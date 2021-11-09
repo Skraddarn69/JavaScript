@@ -1,0 +1,53 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function hasCollided() {
+        return (getPixel(mouse.x, mouse.y).red != 0);
+    }
+    function hasFinnished() {
+        return (getPixel(mouse.x, mouse.y).green != 0);
+    }
+    function start() {
+        // Labyrintens ytterkant
+        line(10, 10, 600, 10, 10, "red");
+        line(10, 5, 10, 605, 10, "red");
+        line(600, 5, 600, 205, 10, "red");
+        line(600, 295, 600, 1000, 10, "red");
+        line(100, 600, 605, 600, 10, "red");
+
+        // Labyrintens inre väggar
+        line(100, 605, 100, 300, 10, "red");
+        line(95, 300, 600, 300, 10, "red");
+        line(10, 200, 600, 200, 10, "red");
+
+        // Målområde
+        rectangle(595, 205, 90, 90, "green");
+        text(610, 260, 20, "Mål!", "white");
+
+        // Startlinje
+        line(15, 600, 95, 600, 10, "blue");
+    }
+    function update() {
+        if(mouse.x < 600 && mouse.y < 605) {
+            hideMouse();
+        } else {
+            showMouse();
+        }
+        if(hasCollided()) {
+
+            // Deathscreen
+            fill("black");
+            text(400, 350, 100, "YOU DIED!", "red");
+            
+            showMouse();
+            stopUpdate();
+        }
+        if(hasFinnished()) {
+
+            // Meddelande som visas när man vinner
+            fill("white");
+            text(300, 350, 100, "You are win!", "yellow");
+
+            showMouse();
+            stopUpdate();
+        }
+    }
+</script>

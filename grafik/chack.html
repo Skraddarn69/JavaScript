@@ -1,0 +1,14 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        fill("green");
+        for(let i=0;i<600;i+=75) {
+            for(let j=0;j<600;j+=75) {
+                if((i+j)%2==0) {
+                    rectangle(i, j, 75, 75, "black");
+                } else {
+                    rectangle(i, j, 75, 75, "white");
+                }
+            }
+        }
+    }
+</script>

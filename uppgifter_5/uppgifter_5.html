@@ -1,0 +1,64 @@
+<script>
+/*
+    //uppgift 1
+
+    let kapital = Number(prompt("Vad är ditt start kapital"));
+    let procent;
+    for(let i=1;1<5;i++){
+        procent = Number(prompt("Hur stor är den procentuella förändringen år "+i));
+        kapital=kapital*(1+procent/100);
+    }
+    alert("Ditt kapital efter fyra år, är "+kapital.toLocaleStringFixed(2));
+
+
+
+    //uppgift 2
+
+    function laddaSida() {
+        sida = Number(prompt("Ange en sidlängd."));
+        return sida;
+    }
+    function kubVolym(sida){
+        return sida ** 3;
+    }
+    function skrivUt(volym){
+        alert (`Kubens volym är ${volym} cm^3`);
+    }
+
+    let sida, volym;
+    do {
+        sida = laddaSida();
+        volym = kubVolym(sida);
+        skrivUt(volym);
+    }while (confirm("Vill du beräkna volymen av en till kub?"))
+
+   
+
+    //uppgift 3
+
+    do{
+        let varde = Number(prompt("Ange varukorgens värde i kronor. (0-9999)"));
+        let rabatt;
+        let slutVarde;
+        if(varde<0){
+            alert("Ange ett värde mellan 0 och 9999, tack.");
+            break;
+        } else if(varde<500){
+            rabatt = 0;
+        } else if(varde<1000){
+            rabatt = varde * 0.05;
+        } else if(varde<5000){
+            rabatt = varde * 0.1;
+        } else if(varde<10000){
+            rabatt = varde * 0.2;
+        } else {
+            alert("Ange ett värde mellan 0 och 9999, tack.")
+            break;
+        }
+        slutVarde = varde - rabatt;
+        alert(`Varukorgens värde är ${varde}kr, rabatten är ${rabatt}kr och det slutgiltiga värdet på korgen är ${slutVarde}kr.`)
+    } while(confirm("Vill du beräkna en ny varukorg?"));
+
+     ______*/
+
+</script>

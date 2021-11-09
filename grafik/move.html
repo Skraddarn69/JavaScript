@@ -1,0 +1,15 @@
+<script src = "http://spelprogrammering.nu/simple.js">
+    function start() {
+        ball = {x:0, y:0, farg:"red"};
+        y=10;
+    }
+    function update() {
+        clearScreen();
+        if(keyboard.a) {ball.x-=5;}
+        if(keyboard.d) {ball.x+=5;}
+        if(keyboard.w) {ball.y-=5;}
+        if(keyboard.s) {ball.y+=5;}
+        if(keyboard.space) {ball.farg="blue";}
+        circle(ball.x, ball.y, 50, ball.farg);
+    }
+</script>
